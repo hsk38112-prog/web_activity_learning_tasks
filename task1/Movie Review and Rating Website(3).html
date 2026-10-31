@@ -1,0 +1,379 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Review and Rating Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111827;
+            color: white;
+        }
+
+        header {
+            background-color: #020617;
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #facc15;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #7f1d1d, #111827);
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            color: #facc15;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #facc15;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        .section {
+            padding: 40px 25px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #facc15;
+            margin-bottom: 30px;
+        }
+
+        .movies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .movie-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 20px #facc15;
+        }
+
+        .poster {
+            height: 230px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            background: linear-gradient(135deg, #7c2d12, #1e1b4b);
+        }
+
+        .poster.two {
+            background: linear-gradient(135deg, #064e3b, #172554);
+        }
+
+        .poster.three {
+            background: linear-gradient(135deg, #581c87, #1e293b);
+        }
+
+        .poster.four {
+            background: linear-gradient(135deg, #1e3a8a, #7f1d1d);
+        }
+
+        .poster.five {
+            background: linear-gradient(135deg, #713f12, #312e81);
+        }
+
+        .poster.six {
+            background: linear-gradient(135deg, #831843, #1e293b);
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-info h3 {
+            color: #facc15;
+            margin-bottom: 12px;
+        }
+
+        .movie-info p {
+            color: #cbd5e1;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .rating {
+            color: #facc15;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .reviews {
+            background-color: #1e293b;
+            padding: 22px;
+            margin-bottom: 15px;
+            border-left: 5px solid #facc15;
+            border-radius: 8px;
+        }
+
+        .reviews h3 {
+            color: #facc15;
+            margin-bottom: 10px;
+        }
+
+        .reviews p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .details {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            line-height: 2;
+        }
+
+        footer {
+            background-color: #020617;
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .movies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .movies {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎬 MovieZone</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#genres">Genres</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Welcome to MovieZone</h2>
+    <p>Discover Movies, Read Reviews and Explore Ratings!</p>
+    <button class="btn">Explore Movies</button>
+</section>
+
+<section class="section" id="movies">
+    <h2>🔥 Popular Movies</h2>
+
+    <div class="movies">
+
+        <div class="movie-card">
+            <div class="poster">🚀</div>
+
+            <div class="movie-info">
+                <h3>Interstellar</h3>
+                <p>Genre: Science Fiction</p>
+                <p>Release Date: 2014</p>
+                <p>Cast: Matthew McConaughey</p>
+                <p>Story: A journey through space to find a new home for humanity.</p>
+                <div class="rating">★★★★★ 9.0/10</div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <div class="poster two">🦁</div>
+
+            <div class="movie-info">
+                <h3>The Lion King</h3>
+                <p>Genre: Animation</p>
+                <p>Release Date: 2019</p>
+                <p>Cast: Donald Glover</p>
+                <p>Story: A young lion discovers his responsibility as king.</p>
+                <div class="rating">★★★★☆ 8.5/10</div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <div class="poster three">🕷️</div>
+
+            <div class="movie-info">
+                <h3>Spider-Man</h3>
+                <p>Genre: Action</p>
+                <p>Release Date: 2021</p>
+                <p>Cast: Tom Holland</p>
+                <p>Story: A superhero faces challenges while protecting the world.</p>
+                <div class="rating">★★★★★ 8.9/10</div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <div class="poster four">🦇</div>
+
+            <div class="movie-info">
+                <h3>The Batman</h3>
+                <p>Genre: Thriller</p>
+                <p>Release Date: 2022</p>
+                <p>Cast: Robert Pattinson</p>
+                <p>Story: Batman investigates mysterious crimes in Gotham City.</p>
+                <div class="rating">★★★★☆ 8.2/10</div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <div class="poster five">🏹</div>
+
+            <div class="movie-info">
+                <h3>Avengers</h3>
+                <p>Genre: Action</p>
+                <p>Release Date: 2019</p>
+                <p>Cast: Robert Downey Jr.</p>
+                <p>Story: Heroes unite to save the universe from danger.</p>
+                <div class="rating">★★★★★ 9.2/10</div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <div class="poster six">🎭</div>
+
+            <div class="movie-info">
+                <h3>Joker</h3>
+                <p>Genre: Drama</p>
+                <p>Release Date: 2019</p>
+                <p>Cast: Joaquin Phoenix</p>
+                <p>Story: A character experiences life-changing challenges.</p>
+                <div class="rating">★★★★☆ 8.8/10</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="genres">
+    <h2>🎭 Movie Genres</h2>
+
+    <div class="movies">
+        <div class="movie-card movie-info">
+            <h3>Action</h3>
+            <p>Exciting action and adventure movies.</p>
+        </div>
+
+        <div class="movie-card movie-info">
+            <h3>Comedy</h3>
+            <p>Enjoy entertaining and funny movies.</p>
+        </div>
+
+        <div class="movie-card movie-info">
+            <h3>Science Fiction</h3>
+            <p>Explore futuristic stories and technology.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>⭐ Critic Reviews</h2>
+
+    <div class="reviews">
+        <h3>Interstellar - 9/10</h3>
+        <p>Amazing visuals, excellent storytelling and wonderful music.</p>
+    </div>
+
+    <div class="reviews">
+        <h3>Spider-Man - 8.9/10</h3>
+        <p>An entertaining superhero movie with exciting scenes.</p>
+    </div>
+
+    <div class="reviews">
+        <h3>Avengers - 9.2/10</h3>
+        <p>A fantastic superhero experience with great action.</p>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <h2>📽️ About MovieZone</h2>
+
+    <div class="details">
+        <p>MovieZone is a movie review and rating website.</p>
+        <p>Explore popular movies and discover different genres.</p>
+        <p>Read movie summaries, cast details and critic reviews.</p>
+        <p>Find your next favourite movie with MovieZone!</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MovieZone - Movie Review Website</p>
+    <p>Watch Movies | Read Reviews | Share Ratings</p>
+</footer>
+
+</body>
+</html>
+```
